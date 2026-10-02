@@ -1,0 +1,4 @@
+assets/
+.DS_Store
+# Internal brief: lists partners and plans that must not be public
+CLAUDE.md
