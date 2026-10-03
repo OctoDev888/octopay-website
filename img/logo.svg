@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="OctoPay">
+  <rect width="512" height="512" rx="116" fill="#5AB0F5"/>
+  <!-- Six straight legs, evenly spaced from 8:30 to 3:30 on a clock face (every 30 degrees),
+       each a slightly different length. Drawn wider in navy first for the outline, then white. -->
+  <g stroke="#0B2559" stroke-width="74" stroke-linecap="round">
+    <path d="M256 205 L438 254 M256 205 L407 356 M256 205 L317 433 M256 205 L200 416 M256 205 L95 366 M256 205 L84 251"/>
+  </g>
+  <circle cx="256" cy="205" r="164" fill="#0B2559"/>
+  <g stroke="#FFFFFF" stroke-width="50" stroke-linecap="round">
+    <path d="M256 205 L438 254 M256 205 L407 356 M256 205 L317 433 M256 205 L200 416 M256 205 L95 366 M256 205 L84 251"/>
+  </g>
+  <circle cx="256" cy="205" r="152" fill="#FFFFFF"/>
+  <g fill="#0B2559">
+    <ellipse cx="210" cy="188" rx="17" ry="23"/>
+    <ellipse cx="302" cy="188" rx="17" ry="23"/>
+  </g>
+  <path d="M228 240 Q256 264 284 240" fill="none" stroke="#0B2559" stroke-width="12" stroke-linecap="round"/>
+</svg>
