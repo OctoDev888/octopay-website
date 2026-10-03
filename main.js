@@ -9,12 +9,11 @@ const WAITLIST_ENDPOINT = '';
   const root = document.documentElement;
   const btn = document.querySelector('.theme-toggle');
   if (!btn) return;
-  const isDark = () =>
-    root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDark = () => root.dataset.theme !== 'light';
   btn.addEventListener('click', () => {
     const next = isDark() ? 'light' : 'dark';
     root.dataset.theme = next;
-    try { localStorage.setItem('theme', next); } catch (e) {}
+    try { localStorage.setItem('octopay-theme', next); } catch (e) {}
   });
 })();
 

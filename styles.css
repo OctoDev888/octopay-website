@@ -1,4 +1,5 @@
-/* OctoPay marketing site. Colors are the app's tokens (see CLAUDE.md, "Brand"). */
+/* OctoPay marketing site. Colors are the app's tokens (see CLAUDE.md, "Brand").
+   Dark is the default for everyone; the header toggle switches to light. */
 
 :root {
   --blue: #1D5FE0;
@@ -9,49 +10,6 @@
   --card-a: #3175F2;
   --card-b: #1240AE;
 
-  --bg: #EDF3FD;
-  --surface: #FFFFFF;
-  --surface-muted: #E4ECFA;
-  --border: #D3DFF4;
-  --text: #0B1F44;
-  --text-2: #4B5D80;
-  --text-3: #8292B0;
-  --accent: #1D5FE0;
-  --accent-fill: #1D5FE0;
-  --heading-accent: #0F3DA8;
-  --success: #0F8A47;
-  --danger: #D1242F;
-  --header-bg: rgba(237, 243, 253, 0.82);
-  --shadow: 0 1px 2px rgba(11, 31, 68, 0.06), 0 12px 32px rgba(11, 37, 89, 0.10);
-  --phone-shadow: 0 30px 60px -20px rgba(11, 37, 89, 0.35), 0 12px 24px -12px rgba(11, 37, 89, 0.25);
-
-  --font: -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
-  --radius: 20px;
-  --wrap: 1140px;
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #06122B;
-    --surface: #0E1D3E;
-    --surface-muted: #15284F;
-    --border: #213863;
-    --text: #F2F6FF;
-    --text-2: #A9B9D9;
-    --text-3: #7083A8;
-    --accent: #6FA8FF;
-    --accent-fill: #2F6BEA;
-    --heading-accent: #6FA8FF;
-    --success: #3DD68C;
-    --danger: #FF6B6B;
-    --header-bg: rgba(6, 18, 43, 0.82);
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
-    --phone-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7), 0 12px 24px -12px rgba(0, 0, 0, 0.5);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
   --bg: #06122B;
   --surface: #0E1D3E;
   --surface-muted: #15284F;
@@ -68,6 +26,29 @@
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
   --phone-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7), 0 12px 24px -12px rgba(0, 0, 0, 0.5);
   color-scheme: dark;
+
+  --font: -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
+  --radius: 20px;
+  --wrap: 1140px;
+}
+
+:root[data-theme="light"] {
+  --bg: #EDF3FD;
+  --surface: #FFFFFF;
+  --surface-muted: #E4ECFA;
+  --border: #D3DFF4;
+  --text: #0B1F44;
+  --text-2: #4B5D80;
+  --text-3: #8292B0;
+  --accent: #1D5FE0;
+  --accent-fill: #1D5FE0;
+  --heading-accent: #0F3DA8;
+  --success: #0F8A47;
+  --danger: #D1242F;
+  --header-bg: rgba(237, 243, 253, 0.82);
+  --shadow: 0 1px 2px rgba(11, 31, 68, 0.06), 0 12px 32px rgba(11, 37, 89, 0.10);
+  --phone-shadow: 0 30px 60px -20px rgba(11, 37, 89, 0.35), 0 12px 24px -12px rgba(11, 37, 89, 0.25);
+  color-scheme: light;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -139,13 +120,9 @@ p { margin: 0; }
   cursor: pointer;
 }
 .theme-toggle svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
-.theme-toggle .i-moon { display: none; }
-:root[data-theme="dark"] .theme-toggle .i-sun { display: none; }
-:root[data-theme="dark"] .theme-toggle .i-moon { display: block; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-toggle .i-sun { display: none; }
-  :root:not([data-theme="light"]) .theme-toggle .i-moon { display: block; }
-}
+.theme-toggle .i-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .i-sun { display: block; }
+:root[data-theme="light"] .theme-toggle .i-moon { display: none; }
 
 /* Hero */
 .hero { padding: 72px 0 96px; position: relative; overflow: hidden; }
@@ -252,7 +229,8 @@ h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
 .benefits p { color: var(--text-2); font-size: 15.5px; }
 .ico {
   flex-shrink: 0; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center;
-  background: #5AB0F5; color: var(--navy);
+  background: linear-gradient(135deg, #8DCBFA, #5AB0F5 55%, #3A98EC); color: var(--navy);
+  box-shadow: inset 0 0 0 1px rgba(11, 37, 89, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 2px 6px rgba(58, 152, 236, 0.35);
 }
 .ico svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
@@ -272,8 +250,8 @@ h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
   background: radial-gradient(closest-side, rgba(74, 140, 245, 0.35), transparent 70%);
   pointer-events: none;
 }
-:root[data-theme="dark"] .section-navy { background: #0A1A3D; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .section-navy { background: #0A1A3D; } }
+.section-navy { background: #0A1A3D; }
+:root[data-theme="light"] .section-navy { background: var(--navy); }
 .section-navy .eyebrow { color: var(--light); }
 .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
 .tile {
